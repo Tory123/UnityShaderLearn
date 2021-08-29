@@ -34,12 +34,9 @@
 					fixed3 worldLight = normalize(_WorldSpaceLightPos0.xyz);
 					// Compute diffuse term
 					fixed3 diffuse = _LightColor0.rgb * _Diffuse.rgb * saturate(dot(worldNormal, worldLight));
-
 					o.color = ambient + diffuse;
-
 					return o;
 				}
-
 				fixed4 frag(v2f i) : SV_Target {
 					return fixed4(i.color, 1.0);
 				}
